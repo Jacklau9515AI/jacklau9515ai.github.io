@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" data-ng-app="app">
+
+<head>
+  <!-- Title -->
+  <title>Jack Liu's Personal Website</title>
+  <!-- Meta -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Cache-control" content="public">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="Jack Liu, Full Stack Developer C# .NET/Web API Design">
+  <meta name="keywords" content="Jack Liu, C# .NET Core, EF6, web api, single-page application, resume, personal website, bootstrap, html5, css3">
+  <meta name="author" content="Jack Liu">
+  <link rel="shortcut icon" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  <!-- Retina Images -->
+  <script>
+        if ((window.devicePixelRatio === undefined ? 1 : window.devicePixelRatio) > 1)
+            document.cookie = 'HTTP_IS_RETINA=1;path=/';
+    </script>
+  <!-- End Retina Images -->
+  <!-- Google Web Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="styles/vendor.min.css">
+  <link rel="stylesheet" href="styles/main.min.css">
+</head>
+
+<body data-ng-controller="AppCtrl as vm" ui-jq="fitVids">
+  <div class="loading-bg" data-ng-show="vm.loading">
+    <div class="spinner">
+      <div class="spinner-container container1">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+      <div class="spinner-container container2">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+      <div class="spinner-container container3">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Page Content -->
+  <div id="page-content">
+    <!-- Nav  -->
+    <nav class="navbar navbar-custom navbar-fixed-top" data-ng-include="'views/nav.html'" role="navigation" navbar></nav>
+    <!-- Nav / End -->
+    <!-- Home  -->
+    <section id="home" ui-wallpaper="images/backgrounds/home-bg.jpg" data-ng-include="'views/home.html'"></section>
+    <!-- Home/End -->
+    <!-- About me  -->
+    <section id="aboutme" ui-wallpaper="images/backgrounds/aboutme-bg.jpg" data-ng-include="'views/aboutme.html'"></section>
+    <!-- About me/End -->
+    <!-- Skills -->
+    <section id="skills" ui-jq="wallpaper" ui-options="{source: 'images/backgrounds/skills-bg.jpg' }" data-ng-include="'views/skills.html'"></section>
+    <!-- Skills/End -->
+    <!-- Resume -->
+    <section id="resume" class="container-fluid" data-ng-include="'views/resume.html'"></section>
+    <!-- Resume/End -->
+    <!-- Portfolio -->
+    <section id="portfolio" data-ng-include="'views/portfolio.html'" resize-fix></section>
+    <!-- Portfjolo / End -->
+    <!-- Contact -->
+    <section id="contact" class="black" data-ng-include="'views/contact.html'"></section>
+    <!-- Contact / End -->
+  </div>
+  <!-- Page Content / End -->
+  <script src="scripts/vendor.min.js"></script>
+  <script src="scripts/scripts.min.js"></script>
+</body>
+
+</html>

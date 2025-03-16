@@ -1,0 +1,76 @@
+{
+    "projects": [
+      {
+        "title": "CMCA Geo-Wiki X",
+        "caption": "Cloud-based RV Trip Planner",
+        "bgPic": "images/projects/1/cover.png",
+        "detail": {
+          "title": "A Cloud-based RV Trip Planner With Seamless Navigation on Stunning 3D Visuals, Multi-layer Map",
+          "date": "December 2019-November 2021",
+          "description": "● Multiple-page web application based on Model-View-Controller Pattern.<br/>● Restful API based on .NET Core 3.1, Entity Framework 6, Repository pattern and Owin OAuth.<br/>● Fully responsive interface and compatible with all different devices. <br/>● Implement Authentication with Microsoft Active Directory and Routing.<br/>● Backend C# Unit Testing with NUnit and Moq.",
+          "slides": [
+            "images/projects/1/1.png",
+            "images/projects/1/2.png",
+            "images/projects/1/3.png",
+            "images/projects/1/4.png",
+            "images/projects/1/5.png"
+          ],
+          "link": "https://geowikix.cmca.net.au/"
+        }
+      },
+      {
+        "title": "HemaX Trip Planner",
+        "caption": "Trip Management System",
+        "bgPic": "images/projects/2/cover.png",
+        "detail": {
+          "title": "An Online Interactive Cloud and Mobile Based Solution for the Community to Plan, Socialize, Share Adventures",
+          "date": "May 2018-November 2019",
+          "description": "● Multiple-page web application based on Model-View-Controller Pattern.<br/>● Restful API based on .NET Core 3.1, Entity Framework 6, Repository pattern and Owin OAuth.<br/>● Fully responsive interface and compatible with all different devices. <br/>● Implement Authentication with Microsoft Active Directory and Routing.<br/>● Backend C# Unit Testing with NUnit and Moq.",
+          "slides": [
+            "images/projects/2/1.png",
+            "images/projects/2/2.png",
+            "images/projects/2/3.png",
+            "images/projects/2/4.png",
+            "images/projects/2/5.png"
+          ],
+          "link": "https://hemamaps.com/"
+        }
+      },
+      {
+        "title": "More with Core",
+        "caption": "Inventory Management System",
+        "bgPic": "images/projects/3/cover.png",
+        "detail": {
+          "title": "An Inventory Distribution and Management System",
+          "date": "December 2021-February 2023",
+          "description": "● Utilized: React.JS, C# .NET 6, Python, MSSQL, Docker, Nginx, Azure Kubernetes Services, Azure DevOps, CI/CD Pipeline.<br/>● Restful API based on .NET Core 6, Entity Framework 6, Repository pattern and Owin OAuth.<br/>● Fully responsive interface and compatible with all different devices. <br/>● Implement Authentication with Microsoft Active Directory and Routing.<br/>● Backend C# Unit Testing with NUnit and Moq.",
+          "slides": [
+            "images/projects/3/1.png",
+            "images/projects/3/2.png",
+            "images/projects/3/3.png",
+            "images/projects/3/4.png",
+            "images/projects/3/5.png"
+          ],
+          "link": "https://morewithcore.com/"
+        }
+      },
+      {
+        "title": "Standards Australia Store",
+        "caption": "Convenient solutions to buy and access standards",
+        "bgPic": "images/projects/4/cover.png",
+        "detail": {
+          "title": "E-commerce Platform for Purchasing and Accessing Digital Standards",
+          "date": "May 2023-Now",
+          "description": "● Utilized: React.JS, Next.JS, C# .NET 8, PostgreSQL, Salesforce, MuleSoft, Segment, HubSpot, Microsoft Azure.<br/>● Restful API based on .NET Core 8, Entity Framework, Repository pattern and IAM Auth.<br/>● Fully responsive interface and compatible with all different devices. <br/>● Implement Authentication with Microsoft Active Directory and Routing.<br/>● Backend C# Unit Testing with NUnit and Moq.",
+          "slides": [
+            "images/projects/4/1.png",
+            "images/projects/4/2.png",
+            "images/projects/4/3.png",
+            "images/projects/4/4.png",
+            "images/projects/4/5.png"
+          ],
+          "link": "https://store.standards.org.au/"
+        }
+      }
+    ]
+  }
