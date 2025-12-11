@@ -5,26 +5,12 @@
 
 // Wait for DOM to be ready
 document.addEventListener('DOMContentLoaded', () => {
-  initLoader();
   initNavigation();
   initTypingEffect();
   initScrollAnimations();
   initPortfolio();
   initModal();
 });
-
-/* ============================================
-   LOADER
-   ============================================ */
-function initLoader() {
-  const loader = document.getElementById('loader');
-  
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      loader.classList.add('hidden');
-    }, 1500);
-  });
-}
 
 /* ============================================
    NAVIGATION
