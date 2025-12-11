@@ -1,6 +1,6 @@
 # Jack Liu | AI Researcher & ML Engineer
 
-[![Website](https://img.shields.io/badge/Website-jacklau9515ai.github.io-6366f1?style=for-the-badge&logo=google-chrome&logoColor=white)](https://jacklau9515ai.github.io/)
+[![Website](https://img.shields.io/badge/Website-jliu9515.github.io-6366f1?style=for-the-badge&logo=google-chrome&logoColor=white)](https://jliu9515.github.io/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-jacklau9515-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jacklau9515)
 [![Google Scholar](https://img.shields.io/badge/Google_Scholar-Publications-4285F4?style=for-the-badge&logo=google-scholar&logoColor=white)](https://scholar.google.com/citations?user=XIuSnWIAAAAJ&hl=en)
 
@@ -46,8 +46,8 @@ In industry, I work as a **Machine Learning Engineer** specializing in **LLM sys
 
 ```bash
 # Clone the repository
-git clone https://github.com/Jacklau9515AI/jacklau9515ai.github.io.git
-cd jacklau9515ai.github.io
+git clone https://github.com/jliu9515/jliu9515.github.io.git
+cd jliu9515.github.io
 
 # Serve locally
 python -m http.server 8080
@@ -65,7 +65,7 @@ Then open `http://localhost:8080`
 
 - **Email:** jacklau9515@gmail.com
 - **LinkedIn:** [linkedin.com/in/jacklau9515](https://www.linkedin.com/in/jacklau9515)
-- **GitHub:** [@Jacklau9515AI](https://github.com/Jacklau9515AI)
+- **GitHub:** [@jliu9515](https://github.com/jliu9515)
 
 ---
 
