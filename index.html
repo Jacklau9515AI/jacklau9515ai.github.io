@@ -1,86 +1,624 @@
-<!doctype html>
-<html lang="en" data-ng-app="app">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <!-- Title -->
-  <title>Jack Liu's Personal Website</title>
-  <!-- Meta -->
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta http-equiv="Cache-control" content="public">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="description" content="Jack Liu, Full Stack Developer C# .NET/Web API Design">
-  <meta name="keywords" content="Jack Liu, C# .NET Core, EF6, web api, single-page application, resume, personal website, bootstrap, html5, css3">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Jack Liu | AI Researcher & ML Engineer at UPenn</title>
+  <meta name="title" content="Jack Liu | AI Researcher & ML Engineer at UPenn">
+  <meta name="description" content="M.S. in AI at University of Pennsylvania. Research on LLMs & Brain-Computer Interface. ML Engineer building production GenAI systems with vLLM, TensorRT-LLM, RAG pipelines.">
+  <meta name="keywords" content="Jack Liu, Xinping Liu, AI Researcher, ML Engineer, LLM, Large Language Models, Brain-Computer Interface, BCI, UPenn, University of Pennsylvania, GenAI, vLLM, TensorRT-LLM, RAG, LangChain, Machine Learning, Deep Learning, NLP">
   <meta name="author" content="Jack Liu">
-  <link rel="shortcut icon" href="images/favicon.png">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://jacklau9515ai.github.io/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jacklau9515ai.github.io/">
+  <meta property="og:title" content="Jack Liu | AI Researcher & ML Engineer at UPenn">
+  <meta property="og:description" content="M.S. in AI at University of Pennsylvania. Research on LLMs & Brain-Computer Interface. Building production GenAI systems.">
+  <meta property="og:image" content="https://jacklau9515ai.github.io/images/me.png">
+  <meta property="og:site_name" content="Jack Liu Portfolio">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://jacklau9515ai.github.io/">
+  <meta name="twitter:title" content="Jack Liu | AI Researcher & ML Engineer at UPenn">
+  <meta name="twitter:description" content="M.S. in AI at University of Pennsylvania. Research on LLMs & Brain-Computer Interface. Building production GenAI systems.">
+  <meta name="twitter:image" content="https://jacklau9515ai.github.io/images/me.png">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
   <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-  <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  <!-- Retina Images -->
-  <script>
-        if ((window.devicePixelRatio === undefined ? 1 : window.devicePixelRatio) > 1)
-            document.cookie = 'HTTP_IS_RETINA=1;path=/';
+  
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jack Liu",
+    "alternateName": ["Xinping Liu", "刘心平"],
+    "url": "https://jacklau9515ai.github.io",
+    "image": "https://jacklau9515ai.github.io/images/me.png",
+    "jobTitle": ["AI Researcher", "ML Engineer"],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Future Secure AI"
+    },
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Pennsylvania"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Tasmania"
+      }
+    ],
+    "knowsAbout": ["Large Language Models", "Brain-Computer Interface", "Machine Learning", "GenAI", "vLLM", "RAG"],
+    "sameAs": [
+      "https://www.linkedin.com/in/jacklau9515",
+      "https://github.com/Jacklau9515AI",
+      "https://scholar.google.com/citations?user=XIuSnWIAAAAJ"
+    ]
+  }
     </script>
-  <!-- End Retina Images -->
-  <!-- Google Web Fonts -->
-  <link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="styles/vendor.min.css">
-  <link rel="stylesheet" href="styles/main.min.css">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/modern.css">
 </head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-icon">
+        <svg viewBox="0 0 100 100" class="neural-svg">
+          <circle cx="50" cy="20" r="4" class="node"/>
+          <circle cx="25" cy="50" r="4" class="node"/>
+          <circle cx="75" cy="50" r="4" class="node"/>
+          <circle cx="35" cy="80" r="4" class="node"/>
+          <circle cx="65" cy="80" r="4" class="node"/>
+          <line x1="50" y1="20" x2="25" y2="50" class="edge"/>
+          <line x1="50" y1="20" x2="75" y2="50" class="edge"/>
+          <line x1="25" y1="50" x2="35" y2="80" class="edge"/>
+          <line x1="25" y1="50" x2="65" y2="80" class="edge"/>
+          <line x1="75" y1="50" x2="35" y2="80" class="edge"/>
+          <line x1="75" y1="50" x2="65" y2="80" class="edge"/>
+        </svg>
+      </div>
+      <span class="loader-text">Initializing...</span>
+    </div>
+  </div>
 
-<body data-ng-controller="AppCtrl as vm" ui-jq="fitVids">
-  <div class="loading-bg" data-ng-show="vm.loading">
-    <div class="spinner">
-      <div class="spinner-container container1">
-        <div class="circle1"></div>
-        <div class="circle2"></div>
-        <div class="circle3"></div>
-        <div class="circle4"></div>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-text">Jack</span><span class="logo-accent">Liu</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#portfolio" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-icon">🎓</span>
+        <span>M.S. in Artificial Intelligence @ UPenn</span>
       </div>
-      <div class="spinner-container container2">
-        <div class="circle1"></div>
-        <div class="circle2"></div>
-        <div class="circle3"></div>
-        <div class="circle4"></div>
+      <h1 class="hero-title">
+        <span class="title-line">Jack Liu</span>
+      </h1>
+      <div class="hero-subtitle">
+        <span class="typing-text" id="typingText"></span>
+        <span class="cursor">|</span>
       </div>
-      <div class="spinner-container container3">
-        <div class="circle1"></div>
-        <div class="circle2"></div>
-        <div class="circle3"></div>
-        <div class="circle4"></div>
+      <p class="hero-description">
+        Bridging <span class="highlight">Academic Research</span> and <span class="highlight">Industry Engineering</span> 
+        to build AI systems that understand, reason, and collaborate with humans.
+      </p>
+      <div class="hero-cta">
+        <a href="#about" class="btn btn-primary">
+          <span>Explore My Work</span>
+          <i class="fas fa-arrow-down"></i>
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <span>Get In Touch</span>
+        </a>
+      </div>
+      <div class="hero-social">
+        <a href="https://www.linkedin.com/in/jacklau9515" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/Jacklau9515AI" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://scholar.google.com/citations?user=XIuSnWIAAAAJ&hl=en" target="_blank" aria-label="Google Scholar">
+          <i class="fas fa-graduation-cap"></i>
+        </a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Where Research Meets Engineering</h2>
+      </div>
+      
+      <div class="about-grid">
+        <div class="about-image">
+          <div class="image-wrapper">
+            <img src="images/me.png" alt="Jack Liu">
+            <div class="image-decoration"></div>
+          </div>
+          <div class="about-cta">
+            <a href="https://scholar.google.com/citations?user=XIuSnWIAAAAJ&hl=en" target="_blank" class="about-btn">
+              <i class="fas fa-book-open"></i>
+              <span>Publications</span>
+            </a>
+            <a href="https://www.linkedin.com/in/jacklau9515" target="_blank" class="about-btn">
+              <i class="fab fa-linkedin-in"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/Jacklau9515AI" target="_blank" class="about-btn">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+          </div>
+        </div>
+        
+        <div class="about-content">
+          <div class="about-track">
+            <div class="track-header">
+              <div class="track-icon academic">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h3>Academic Track</h3>
+            </div>
+            <p>
+              I am a <strong>Master's student in Artificial Intelligence</strong> at the <strong>University of Pennsylvania</strong>. 
+              My research focuses on <strong>Large Language Models (LLMs)</strong> and <strong>Brain-Computer Interface (BCI)</strong>, 
+              aiming to improve LLM reasoning, alignment, and interaction quality — building models that understand, 
+              respond, and collaborate with humans more effectively across modalities.
+            </p>
+            <div class="research-tags">
+              <span class="tag">LLM Reasoning</span>
+              <span class="tag">Model Alignment</span>
+              <span class="tag">Brain-Computer Interface</span>
+              <span class="tag">Multimodal AI</span>
+            </div>
+          </div>
+          
+          <div class="about-track">
+            <div class="track-header">
+              <div class="track-icon industry">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h3>Industry Track</h3>
+            </div>
+            <p>
+              In industry, I work as a <strong>Machine Learning Engineer</strong> specializing in <strong>Large Language Model systems</strong>, 
+              building production-grade GenAI applications using <strong>vLLM, TensorRT-LLM, RAG pipelines</strong>, and <strong>agentic workflows</strong>. 
+              I design scalable LLM inference infrastructure and full-stack solutions across <strong>Azure, AWS, and GCP</strong>, 
+              integrating efficient serving, orchestration, and cloud deployment into real-world AI systems.
+            </p>
+            <div class="tech-stack">
+              <span class="tech">vLLM</span>
+              <span class="tech">TensorRT-LLM</span>
+              <span class="tech">LangChain</span>
+              <span class="tech">RAG</span>
+              <span class="tech">Azure</span>
+              <span class="tech">AWS</span>
+              <span class="tech">GCP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Expertise</span>
+        <h2 class="section-title">Technical Arsenal</h2>
+      </div>
+      
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="category-header">
+            <i class="fas fa-brain"></i>
+            <h3>AI / ML / LLM</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">LLM Systems</span>
+            <span class="skill-tag">vLLM</span>
+            <span class="skill-tag">TensorRT-LLM</span>
+            <span class="skill-tag">RAG Pipelines</span>
+            <span class="skill-tag">LangChain</span>
+            <span class="skill-tag">Hugging Face</span>
+            <span class="skill-tag">OpenAI API</span>
+            <span class="skill-tag">Embeddings</span>
+            <span class="skill-tag">Vector DBs</span>
+            <span class="skill-tag">pgvector</span>
+            <span class="skill-tag">Agentic Workflows</span>
+            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">spaCy</span>
+            <span class="skill-tag">Transformers</span>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <div class="category-header">
+            <i class="fas fa-code"></i>
+            <h3>Programming & Frameworks</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">C# .NET 8</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">ASP.NET Core</span>
+            <span class="skill-tag">GraphQL</span>
+            <span class="skill-tag">gRPC</span>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <div class="category-header">
+            <i class="fas fa-cloud"></i>
+            <h3>Cloud & DevOps</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Azure</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">GCP</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">AKS</span>
+            <span class="skill-tag">ECS</span>
+            <span class="skill-tag">Lambda</span>
+            <span class="skill-tag">Terraform</span>
+            <span class="skill-tag">CI/CD</span>
+            <span class="skill-tag">Azure DevOps</span>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <div class="category-header">
+            <i class="fas fa-database"></i>
+            <h3>Data & Infrastructure</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">SQL Server</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">T-SQL</span>
+            <span class="skill-tag">Entity Framework</span>
+            <span class="skill-tag">Redis</span>
+            <span class="skill-tag">Data Pipelines</span>
+            <span class="skill-tag">ETL</span>
+            <span class="skill-tag">API Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Journey</span>
+        <h2 class="section-title">Experience & Education</h2>
+      </div>
+      
+      <div class="timeline">
+        <!-- Work Experience -->
+        <div class="timeline-item">
+          <div class="timeline-marker work"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <img src="images/resumes/future_secure_ai_logo.png" alt="Future Secure AI" class="company-logo">
+              <div class="timeline-info">
+                <h3>Senior Software Engineer</h3>
+                <h4><a href="https://www.futuresecure.ai" target="_blank">Future Secure AI</a></h4>
+                <span class="timeline-meta">
+                  <i class="fas fa-calendar"></i> 2025.05 – Present
+                  <i class="fas fa-map-marker-alt"></i> Sydney, Australia
+                </span>
+              </div>
+            </div>
+            <ul class="timeline-details">
+              <li>Implementing AI product with Node.js, integrating LLMs (e.g., LangChain) and agent frameworks</li>
+              <li>Designing algorithms for autonomous AI agents in enterprise environments</li>
+              <li>Developing scalable APIs and system integrations for hybrid cloud platforms</li>
+              <li>Collaborating across teams to ensure SOC2 compliance and enhance user experience</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker work"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <img src="images/resumes/standards_australia_logo.png" alt="Standards Australia" class="company-logo">
+              <div class="timeline-info">
+                <h3>Senior Full Stack Engineer</h3>
+                <h4><a href="https://www.standards.org.au" target="_blank">Standards Australia</a></h4>
+                <span class="timeline-meta">
+                  <i class="fas fa-calendar"></i> 2023.04 – 2025.05
+                  <i class="fas fa-map-marker-alt"></i> Sydney, Australia
+                </span>
+              </div>
+            </div>
+            <ul class="timeline-details">
+              <li>Decoupled projects to microservice and deployed on Azure with effective segregated envs</li>
+              <li>Implemented Figma designs to React UI with Jest Unit Tests, increased UI reliability by 80%</li>
+              <li>Empowered strategic adoption of HubSpot and Segment for seamless platform integration</li>
+              <li>Replaced React JS with Next JS to enhanced SEO and faster page loads</li>
+              <li>Integrated Algolia search functionality for efficient search capabilities</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker work"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <img src="images/resumes/eastman_chemical_company_logo.png" alt="Eastman" class="company-logo">
+              <div class="timeline-info">
+                <h3>Full Stack Engineer</h3>
+                <h4><a href="https://www.eastman.com/en" target="_blank">Eastman</a></h4>
+                <span class="timeline-meta">
+                  <i class="fas fa-calendar"></i> 2021.12 – 2023.03
+                  <i class="fas fa-map-marker-alt"></i> Nashville, TN
+                </span>
+              </div>
+            </div>
+            <ul class="timeline-details">
+              <li>Code review and enhancement for brownfield and greenfield applications</li>
+              <li>Penetration testing and vulnerabilities fixing for applications</li>
+              <li>WeChat Mini Programs development and publishing</li>
+              <li>Legacy data analysis, cleaning and transferring to new systems</li>
+              <li>Azure DevOps cutover planning and Azure Portal integrations</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker work"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <img src="images/resumes/cjglobaltech_logo.png" alt="CJ Global Tech" class="company-logo">
+              <div class="timeline-info">
+                <h3>Full Stack C# .NET Developer</h3>
+                <h4><a href="https://www.linkedin.com/company/cjglobaltech" target="_blank">CJ Global Tech</a></h4>
+                <span class="timeline-meta">
+                  <i class="fas fa-calendar"></i> 2018.04 – 2021.11
+                  <i class="fas fa-map-marker-alt"></i> Sydney, Australia
+                </span>
+              </div>
+            </div>
+            <ul class="timeline-details">
+              <li>Refactored SQL and business logic for data sync in service and repository layer</li>
+              <li>Built .NET Web API (.NET Framework/.NET Core) with Entity Framework</li>
+              <li>Cross-browser UI and data-interaction development</li>
+              <li>Third-party payment integration</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="timeline-item">
+          <div class="timeline-marker education"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <img src="images/resumes/university_of_pennsylvania_logo.png" alt="UPenn" class="company-logo">
+              <div class="timeline-info">
+                <h3>Master of Science in Artificial Intelligence</h3>
+                <h4><a href="https://www.upenn.edu/" target="_blank">University of Pennsylvania</a></h4>
+                <span class="timeline-meta">
+                  <i class="fas fa-map-marker-alt"></i> Philadelphia, PA
+                </span>
+              </div>
+            </div>
+            <ul class="timeline-details">
+              <li>Focusing on knowledge-based agents, large language models, NLP, and deep learning</li>
+              <li>Coursework integrating real-world tools and applications</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker education"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <img src="images/resumes/university_of_tasmania_logo.png" alt="UTAS" class="company-logo">
+              <div class="timeline-info">
+                <h3>Bachelor of Science (Honours) in Computer Science</h3>
+                <h4><a href="https://www.utas.edu.au/" target="_blank">University of Tasmania</a></h4>
+                <span class="timeline-meta">
+                  <i class="fas fa-map-marker-alt"></i> Hobart, Australia
+                </span>
+              </div>
+            </div>
+            <ul class="timeline-details">
+              <li>Research on evaluating word embeddings with human cognitive data sources</li>
+              <li>
+                <strong>Publication:</strong> 
+                <a href="https://link.springer.com/chapter/10.1007/978-981-99-8388-9_44" target="_blank" class="publication-link">
+                  Enhance Reading Comprehension from EEG-Based Brain-Computer Interface AI 2023
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Showcase of my production-grade solutions</p>
+      </div>
+      
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Projects will be loaded dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Modal -->
+  <div class="modal" id="projectModal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-body">
+        <div class="modal-slider" id="modalSlider">
+          <!-- Slides will be inserted here -->
+        </div>
+        <div class="slider-nav">
+          <button class="slider-btn prev" id="sliderPrev"><i class="fas fa-chevron-left"></i></button>
+          <button class="slider-btn next" id="sliderNext"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="modal-info">
+          <h3 id="modalTitle"></h3>
+          <p class="modal-date" id="modalDate"></p>
+          <div class="modal-description" id="modalDescription"></div>
+          <a href="#" class="btn btn-primary" id="modalLink" target="_blank">
+            <span>View Project</span>
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
       </div>
     </div>
   </div>
-  <!-- Page Content -->
-  <div id="page-content">
-    <!-- Nav  -->
-    <nav class="navbar navbar-custom navbar-fixed-top" data-ng-include="'views/nav.html'" role="navigation" navbar></nav>
-    <!-- Nav / End -->
-    <!-- Home  -->
-    <section id="home" ui-wallpaper="images/backgrounds/home-bg.jpg" data-ng-include="'views/home.html'"></section>
-    <!-- Home/End -->
-    <!-- About me  -->
-    <section id="aboutme" ui-wallpaper="images/backgrounds/aboutme-bg.jpg" data-ng-include="'views/aboutme.html'"></section>
-    <!-- About me/End -->
-    <!-- Skills -->
-    <section id="skills" ui-jq="wallpaper" ui-options="{source: 'images/backgrounds/skills-bg.jpg' }" data-ng-include="'views/skills.html'"></section>
-    <!-- Skills/End -->
-    <!-- Resume -->
-    <section id="resume" class="container-fluid" data-ng-include="'views/resume.html'"></section>
-    <!-- Resume/End -->
-    <!-- Portfolio -->
-    <section id="portfolio" data-ng-include="'views/portfolio.html'" resize-fix></section>
-    <!-- Portfjolo / End -->
-    <!-- Contact -->
-    <section id="contact" class="black" data-ng-include="'views/contact.html'"></section>
-    <!-- Contact / End -->
-  </div>
-  <!-- Page Content / End -->
-  <script src="scripts/vendor.min.js"></script>
-  <script src="scripts/scripts.min.js"></script>
-</body>
 
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <div class="section-header">
+          <span class="section-tag">Connect</span>
+          <h2 class="section-title">Let's Collaborate</h2>
+        </div>
+        <p class="contact-description">
+          Whether you're interested in research collaboration, industry projects, 
+          or just want to discuss AI and LLMs — I'd love to hear from you.
+        </p>
+        
+        <div class="contact-details">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <span class="label">Email</span>
+              <a href="mailto:jacklau9515@gmail.com">jacklau9515@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-linkedin-in"></i>
+            <div>
+              <span class="label">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/jacklau9515" target="_blank">linkedin.com/in/jacklau9515</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <span class="label">Location</span>
+              <span>447 Sutter St, San Francisco, CA 94108, USA</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/jacklau9515" target="_blank" class="social-link">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/Jacklau9515AI" target="_blank" class="social-link">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://scholar.google.com/citations?user=XIuSnWIAAAAJ&hl=en" target="_blank" class="social-link">
+            <i class="fas fa-graduation-cap"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="contact-map">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0927203198!2d-122.41008492392033!3d37.78950071198756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808ed3b3af3d%3A0x2c0e0c5a3a5f4f10!2s447%20Sutter%20St%2C%20San%20Francisco%2C%20CA%2094108!5e0!3m2!1sen!2sus!4v1702300000000!5m2!1sen!2sus"
+          width="100%" 
+          height="100%" 
+          style="border:0; filter: grayscale(1) invert(0.92) contrast(0.9);" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2025 Jack Liu. Bridging Research & Engineering.</p>
+        <p class="footer-tagline">Built with passion for AI and beautiful code.</p>
+      </div>
+  </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts/modern.js"></script>
+</body>
 </html>
