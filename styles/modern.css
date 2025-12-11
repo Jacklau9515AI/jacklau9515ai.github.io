@@ -523,14 +523,15 @@ ul, ol {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 350px 1fr;
-  gap: 60px;
+  grid-template-columns: 400px 1fr;
+  gap: 80px;
   align-items: start;
 }
 
 .about-image {
   position: sticky;
   top: 120px;
+  width: 100%;
 }
 
 .image-wrapper {
@@ -554,8 +555,46 @@ ul, ol {
 
 .about-cta {
   display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.about-btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 12px;
-  margin-top: 20px;
+  width: 100%;
+  background: var(--accent-gradient);
+  border: none;
+  border-radius: 12px;
+  padding: 16px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  transition: var(--transition-base);
+  box-shadow: var(--shadow-glow);
+}
+
+.about-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.about-btn-primary i {
+  font-size: 18px;
+}
+
+.about-btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+.about-btn-group .about-btn {
+  flex: 1;
+  justify-content: center;
+  white-space: nowrap;
 }
 
 .about-btn {
@@ -1257,7 +1296,7 @@ ul, ol {
   
   .about-image {
     position: static;
-    max-width: 350px;
+    max-width: 400px;
     margin: 0 auto;
   }
   
@@ -1329,8 +1368,13 @@ ul, ol {
     justify-content: center;
   }
   
-  .about-cta {
+  .about-btn-group {
     flex-wrap: wrap;
+  }
+  
+  .about-btn-group .about-btn {
+    flex: 1 1 calc(50% - 5px);
+    min-width: 120px;
   }
   
   .timeline::before {
@@ -1355,14 +1399,29 @@ ul, ol {
     font-size: 16px;
   }
   
-  .about-cta {
-    justify-content: center;
+  .hero-badge {
+    font-size: 12px;
+    padding: 8px 14px;
   }
   
-  .about-btn {
-    flex: 1;
+  .hero-badge span:last-child {
+    display: none;
+  }
+  
+  .hero-badge::after {
+    content: "UPenn AI";
+  }
+  
+  .about-btn-group {
+    flex-direction: column;
+  }
+  
+  .about-btn-group .about-btn {
+    width: 100%;
+  }
+  
+  .skill-tags {
     justify-content: center;
-    min-width: 100px;
   }
   
   .timeline-header {
